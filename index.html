@@ -1,0 +1,229 @@
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>彩票模板</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <meta name="robots" content="all">
+        <meta name="baiduspider" content="all">
+        <meta name="googlebot" content="all">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+        <meta name="renderer" content="webkit">
+        <meta name="format-detection" content="telephone=no">
+        <style type="text/css"> 
+            body{
+                font-size: 16px;
+            }       
+            .wrapper {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .item {
+                width: 300px;
+                height: 400px;
+                padding: 16px;
+                margin: 8px;
+                background-color: #e007071c;
+            } 
+            .item h3{
+                text-align: center;
+            }
+            .item .date{
+                display: flex;
+                justify-content: space-between;
+            }
+            .item .oauth{
+                display: flex;
+                justify-content: space-between;
+            }
+            .item hr{
+                height:1px;
+                border:none;
+                border-top:1px dashed #000;
+            }
+            .item .content{
+                height: 160px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .item .content>span{
+                font-size: 48px;
+                margin: 48px
+            }
+            .item .pre{
+                font-size: 14px;
+                display: flex;
+                justify-content: space-between;
+            }                  
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <!-- <div class="item">
+                <h3>YUX排列2</h3>
+                <p class="date">
+                    <span>第 180924 期</span>
+                    <span>2018年09月24日开奖</span>
+                </p>
+                <p class="oauth">
+                    <span>xxxxxxxxxxxxx</span>
+                    <span>某某某</span>
+                </p>
+                <hr>
+                <p class="content">
+                    <span>0</span>
+                    <span>0</span>
+                </p>
+                <hr>
+                <p class="pre">
+                    <span>上期中奖号码：01</span>
+                    <span>上期剩余奖池：238元</span>
+                </p>
+            </div> -->
+        </div>
+        <script src="https://qidian.gtimg.com/lib/jquery.1.9.1.min.js"></script>
+        <script type="text/javascript">
+            $(function(){  
+                var data = [{
+                    name: "rains",
+                    code: "01",
+                    isJoin: true
+                },{
+                    name: "成忠",
+                    code: "02",
+                    isJoin: true
+                },{
+                    name: "闫蒙",
+                    code: "03",
+                    isJoin: true
+                },{
+                    name: "杨建",
+                    code: "04",
+                    isJoin: true
+                },{
+                    name: "马头",
+                    code: "05",
+                    isJoin: true
+                },{
+                    name: "明荟",
+                    code: "06",
+                    isJoin: true
+                },{
+                    name: "张卓",
+                    code: "07",
+                    isJoin: true
+                },{
+                    name: "小爷",
+                    code: "08",
+                    isJoin: true
+                },{
+                    name: "揣歪",
+                    code: "09",
+                    isJoin: true
+                },{
+                    name: "家乐",
+                    code: "10",
+                    isJoin: true
+                },{
+                    name: "波波",
+                    code: "11",
+                    isJoin: true
+                },{
+                    name: "何玮",
+                    code: "12",
+                    isJoin: true
+                },{
+                    name: "小杰",
+                    code: "13",
+                    isJoin: true
+                },{
+                    name: "张老师",
+                    code: "14",
+                    isJoin: true
+                },{
+                    name: "东辉",
+                    code: "15",
+                    isJoin: true
+                },{
+                    name: "飞飞",
+                    code: "16",
+                    isJoin: true
+                },{
+                    name: "泥坤",
+                    code: "17",
+                    isJoin: true
+                },{
+                    name: "文涛",
+                    code: "18",
+                    isJoin: true
+                },{
+                    name: "芯芯",
+                    code: "19",
+                    isJoin: true
+                },{
+                    name: "运领",
+                    code: "20",
+                    isJoin: true
+                },{
+                    name: "文康",
+                    code: "21",
+                    isJoin: true
+                }];
+
+                var season = {
+                    "20181027": "001",
+                    "20181101": "002",
+                    "20181109": "003",
+                }
+                var lastCode = "88",
+                    lastMoney = "238元";
+
+                //var fragment = document.createDocumentFragment();
+                var fragment = [];
+
+                var date = new Date(),
+                    year = "2018",//date.getFullYear(),
+                    month = "10",//(date.getMonth() >= 0 && date.getMonth() < 9) ? "0" + (date.getMonth() + 1) : (date.getMonth() + 1),
+                    day = "27";//(date.getDate() > 0 && date.getDate() < 10) ? "0" + date.getDate() : date.getDate();
+                var season = season[year + month + day],
+                    luckyDay =  year + "年" + month + "月" + day + "日";
+
+                for(var i = 0; i < data.length; i++){
+                    var uuid = 'xxxx-xxxx-4xxx-yxxx-xxxx'.replace(/[xy]/g, function(c) {
+                        var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+                        return v.toString(16);
+                    })
+                    var itemDom = "<div class='item'>"
+                        + "<h3>YUX排列2</h3>"
+                        + "<p class='date'>"
+                        + "<span>第 "+ season +" 期</span>"
+                        + "<span>"+ luckyDay +"开奖</span>"    
+                        + "</p>"        
+                        + "<p class='oauth'>"        
+                        + "<span>"+ uuid +"</span>"     
+                        + "<span>"+ data[i].name +"</span>"    
+                        + "</p>"
+                        + "<hr>"
+                        + "<p class='content'>"
+                        + "<span>"+ data[i].code[0] +"</span>"
+                        + "<span>"+ data[i].code[1] +"</span>"
+                        + "</p>"
+                        + "<hr>"
+                        + "<p class='pre'>"
+                        + "<span>上期中奖号码："+ lastCode +"</span>"
+                        + "<span>上期剩余奖池："+ lastMoney +"</span>"
+                        + "</p>"
+                        + "</div>";
+                    if(data[i].isJoin){
+                        //fragment.appendChild(itemDom);
+                        fragment.push(itemDom);
+                    }
+                }
+                //document.querySelector(".wrapper").appendChild(fragment);
+                $(".wrapper").html(fragment.join(''));
+            }); 
+        </script>
+    </body>
+</html>
