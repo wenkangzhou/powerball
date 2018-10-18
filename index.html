@@ -194,7 +194,6 @@
                     code: "23",
                     isJoin: true
                 }];
-
                 var season = {
                     "20181019": "001",
                     "20181102": "002",
@@ -202,16 +201,87 @@
                 }
                 var lastCode = "00",
                     lastMoney = "0元";
-
                 //var fragment = document.createDocumentFragment();
                 var fragment = [];
-
                 var date = new Date(),
                     year = "2018",//date.getFullYear(),
                     month = "10",//(date.getMonth() >= 0 && date.getMonth() < 9) ? "0" + (date.getMonth() + 1) : (date.getMonth() + 1),
                     day = "19";//(date.getDate() > 0 && date.getDate() < 10) ? "0" + date.getDate() : date.getDate();
                 var season = season[year + month + day],
                     luckyDay =  year + "年" + month + "月" + day + "日";
+
+                function getQueryStringArgs() {
+                    var qs = (location.search.length > 0 ? location.search.substring(1) : ""),
+                        args = {},
+                        items =qs.length ? qs.split("&") : [],
+                        item = null,
+                        name = null,
+                        value = null,
+                        i = 0,
+                        len = items.length;
+
+                    for (i = 0; i < len; i++){
+                        item = items[i].split("=");
+                        name = decodeURIComponent(item[0]);
+                        value = decodeURIComponent(item[1]);
+                        if(name.length){
+                            args[name] = value;
+                        }
+                    }
+                    return args;
+                }
+
+                function getQueryString(name) {
+                    var queryAry = getQueryStringArgs();
+                    if (queryAry[name]) {
+                        return queryAry[name];
+                    }
+                    return null;
+                }
+
+                if( getQueryString('name') ) {
+                    var scData = data.find(function(item){
+                        return item.email === getQueryString('name')
+                    })
+                    if(scData){
+                        if (scData.isJoin) {
+                            var uuid = 'xxxx-xxxx-4xxx-yxxx-xxxx'.replace(/[xy]/g, function(c) {
+                            var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+                                return v.toString(16);
+                            })
+                            var itemDom = "<div class='item'>"
+                                + "<h3>YUX排列2</h3>"
+                                + "<p class='date'>"
+                                + "<span>第 "+ season +" 期</span>"
+                                + "<span>"+ luckyDay +"开奖</span>"    
+                                + "</p>"        
+                                + "<p class='oauth'>"        
+                                + "<span>"+ uuid +"</span>"     
+                                + "<span>"+ scData.name +"</span>"    
+                                + "</p>"
+                                + "<hr>"
+                                + "<p class='content'>"
+                                + "<span>"+ scData.code[0] +"</span>"
+                                + "<span>"+ scData.code[1] +"</span>"
+                                + "</p>"
+                                + "<hr>"
+                                + "<p class='pre'>"
+                                + "<span>上期中奖号码："+ lastCode +"</span>"
+                                + "<span>上期剩余奖池："+ lastMoney +"</span>"
+                                + "</p>"
+                                + "</div>";
+                            fragment.push(itemDom);
+                            $(".wrapper").css({"justify-content": "center", "align-items": "center", "height": "100%"});
+                            $(".wrapper").html(fragment.join(''));
+                            $(".item").css({"margin-bottom": "0px"});
+                        } else {
+                            $(".wrapper").html("<span>你未参加本次活动</span>");
+                        }
+                    } else {
+                        $(".wrapper").html("<span>请检查你的名字输入是否正确，应该是你的邮箱@前的部分</span>");
+                    }
+                    return ;
+                }
 
                 for(var i = 0; i < data.length; i++){
                     var uuid = 'xxxx-xxxx-4xxx-yxxx-xxxx'.replace(/[xy]/g, function(c) {
