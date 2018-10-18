@@ -88,6 +88,7 @@
         <script src="https://qidian.gtimg.com/lib/jquery.1.9.1.min.js"></script>
         <script type="text/javascript">
             $(function(){  
+                // 基础数据
                 var data = [{
                     email: "zhanghengrong",
                     name: "rains",
@@ -194,11 +195,13 @@
                     code: "23",
                     isJoin: true
                 }];
+                // 期数
                 var season = {
                     "20181019": "001",
                     "20181102": "002",
                     "20181116": "003",
                 }
+                // 上期数据
                 var lastCode = "00",
                     lastMoney = "0元";
                 //var fragment = document.createDocumentFragment();
@@ -209,7 +212,7 @@
                     day = "19";//(date.getDate() > 0 && date.getDate() < 10) ? "0" + date.getDate() : date.getDate();
                 var season = season[year + month + day],
                     luckyDay =  year + "年" + month + "月" + day + "日";
-
+                
                 function getQueryStringArgs() {
                     var qs = (location.search.length > 0 ? location.search.substring(1) : ""),
                         args = {},
@@ -238,7 +241,7 @@
                     }
                     return null;
                 }
-
+                // 查询个人信息
                 if( getQueryString('name') ) {
                     var scData = data.find(function(item){
                         return item.email === getQueryString('name')
@@ -280,7 +283,8 @@
                     } else {
                         $(".wrapper").html("<span>请检查你的名字输入是否正确，应该是你的邮箱@前的部分</span>");
                     }
-                    return ;
+                    document.title = "我的彩票信息";
+                    return;
                 }
 
                 for(var i = 0; i < data.length; i++){
