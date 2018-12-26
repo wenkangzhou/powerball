@@ -112,8 +112,8 @@
                 },{
                     email: "chengmingyu",
                     name: "马头",
-                    code: "25",
-                    isJoin: false
+                    code: "22",
+                    isJoin: true
                 },{
                     email: "yangminghui",
                     name: "明荟",
@@ -127,23 +127,23 @@
                 },{
                     email: "yangye",
                     name: "小爷",
-                    code: "52",
+                    code: "56",
                     isJoin: true
                 },{
                     email: "wangyanlei",
                     name: "揣歪",
                     code: "47",
-                    isJoin: false
+                    isJoin: true
                 },{
                     email: "renjiale",
                     name: "家乐",
-                    code: "65",
+                    code: "68",
                     isJoin: true
                 },{
                     email: "yangfan",
                     name: "波波",
-                    code: "67",
-                    isJoin: false
+                    code: "19",
+                    isJoin: true
                 },{
                     email: "hewei.a",
                     name: "何玮",
@@ -158,11 +158,11 @@
                     email: "zhangxinxu",
                     name: "张老师",
                     code: "44",
-                    isJoin: false
+                    isJoin: true
                 },{
                     email: "zoudonghui",
                     name: "东辉",
-                    code: "56",
+                    code: "27",
                     isJoin: true
                 },{
                     email: "liupeng",
@@ -194,13 +194,18 @@
                     name: "文康",
                     code: "23",
                     isJoin: true
+                },{
+                    email: "guoqing",
+                    name: "郭青",
+                    code: "18",
+                    isJoin: true
                 }];
                 // 期数
                 var season = {
                     "20181019": "001",
                     "20181102": "002",
                     "20181130": "003",
-                    "20181214": "004",
+                    "20181228": "004",
                 }
                 // 上期数据
                 var lastCode = "54",
@@ -210,7 +215,7 @@
                 var date = new Date(),
                     year = "2018",//date.getFullYear(),
                     month = "12",//(date.getMonth() >= 0 && date.getMonth() < 9) ? "0" + (date.getMonth() + 1) : (date.getMonth() + 1),
-                    day = "14";//(date.getDate() > 0 && date.getDate() < 10) ? "0" + date.getDate() : date.getDate();
+                    day = "28";//(date.getDate() > 0 && date.getDate() < 10) ? "0" + date.getDate() : date.getDate();
                 var season = season[year + month + day],
                     luckyDay =  year + "年" + month + "月" + day + "日";
                 
@@ -250,7 +255,7 @@
                     if(scData){
                         if (scData.isJoin) {
                             var uuid = 'xxxx-xxxx-4xxx-yxxx-xxxx'.replace(/[xy]/g, function(c) {
-                            var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+                            var r = Math.random()*16|0, v = c === 'x' ? r : (r&0x3|0x8);
                                 return v.toString(16);
                             })
                             var itemDom = "<div class='item'>"
