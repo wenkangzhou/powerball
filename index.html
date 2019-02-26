@@ -209,6 +209,11 @@
                     name: "甘道川",
                     code: "18",
                     isJoin: true
+                },{
+                    email: "chihaiyue",
+                    name: "池海跃",
+                    code: "18",
+                    isJoin: true
                 }];
                 // 期数
                 var season = {
@@ -216,6 +221,7 @@
                     "20181102": "002",
                     "20181130": "003",
                     "20181228": "004",
+                    "20190301": "005",
                 }
                 // 上期数据
                 var lastCode = "60",
@@ -223,9 +229,9 @@
                 //var fragment = document.createDocumentFragment();
                 var fragment = [];
                 var date = new Date(),
-                    year = "2018",//date.getFullYear(),
-                    month = "12",//(date.getMonth() >= 0 && date.getMonth() < 9) ? "0" + (date.getMonth() + 1) : (date.getMonth() + 1),
-                    day = "28";//(date.getDate() > 0 && date.getDate() < 10) ? "0" + date.getDate() : date.getDate();
+                    year = "2019",//date.getFullYear(),
+                    month = "03",//(date.getMonth() >= 0 && date.getMonth() < 9) ? "0" + (date.getMonth() + 1) : (date.getMonth() + 1),
+                    day = "01";//(date.getDate() > 0 && date.getDate() < 10) ? "0" + date.getDate() : date.getDate();
                 var season = season[year + month + day],
                     luckyDay =  year + "年" + month + "月" + day + "日";
                 
