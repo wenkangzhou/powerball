@@ -230,8 +230,12 @@
                     email: "zhangbinbin",
                     name: "张宾宾",
                     code: "66",
+                    isJoin: true    
+                },{
+                    email: "linyuhan",
+                    name: "林钰涵",
+                    code: "66",
                     isJoin: true
-                    
                 }];
                 // 期数
                 var season = {
@@ -241,6 +245,7 @@
                     "20181228": "004",
                     "20190301": "005",
                     "20190322": "006",
+                    "20190531": "007"
                 }
                 // 上期数据
                 var lastCode = "40",
@@ -249,8 +254,8 @@
                 var fragment = [];
                 var date = new Date(),
                     year = "2019",//date.getFullYear(),
-                    month = "03",//(date.getMonth() >= 0 && date.getMonth() < 9) ? "0" + (date.getMonth() + 1) : (date.getMonth() + 1),
-                    day = "22";//(date.getDate() > 0 && date.getDate() < 10) ? "0" + date.getDate() : date.getDate();
+                    month = "05",//(date.getMonth() >= 0 && date.getMonth() < 9) ? "0" + (date.getMonth() + 1) : (date.getMonth() + 1),
+                    day = "31";//(date.getDate() > 0 && date.getDate() < 10) ? "0" + date.getDate() : date.getDate();
                 var season = season[year + month + day],
                     luckyDay =  year + "年" + month + "月" + day + "日";
                 
