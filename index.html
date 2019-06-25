@@ -173,7 +173,7 @@
                     email: "nikun",
                     name: "泥坤",
                     code: "66",
-                    isJoin: true
+                    isJoin: false
                 },{
                     email: "liuwentao",
                     name: "文涛",
@@ -203,12 +203,12 @@
                     email: "shenjiaxin",
                     name: "沈佳鑫",
                     code: "85",
-                    isJoin: true
+                    isJoin: false
                 },{
                     email: "gandaochuan",
                     name: "甘道川",
                     code: "11",
-                    isJoin: true
+                    isJoin: false
                 },{
                     email: "chihaiyue",
                     name: "池海跃",
@@ -218,7 +218,7 @@
                     email: "shanyerong",
                     name: "单业荣",
                     code: "66",
-                    isJoin: true
+                    isJoin: false
                     
                 },{
                     email: "sunmeiye",
@@ -236,6 +236,21 @@
                     name: "林钰涵",
                     code: "66",
                     isJoin: true
+                },{
+                    email: "qiushanli",
+                    name: "靛蓝",
+                    code: "66",
+                    isJoin: true
+                },{
+                    email: "xiepan",
+                    name: "谢盼",
+                    code: "66",
+                    isJoin: true
+                },{
+                    email: "mikang",
+                    name: "米康",
+                    code: "66",
+                    isJoin: true
                 }];
                 // 期数
                 var season = {
@@ -245,7 +260,7 @@
                     "20181228": "004",
                     "20190301": "005",
                     "20190322": "006",
-                    "20190531": "007"
+                    "20190628": "007"
                 }
                 // 上期数据
                 var lastCode = "40",
@@ -254,8 +269,8 @@
                 var fragment = [];
                 var date = new Date(),
                     year = "2019",//date.getFullYear(),
-                    month = "05",//(date.getMonth() >= 0 && date.getMonth() < 9) ? "0" + (date.getMonth() + 1) : (date.getMonth() + 1),
-                    day = "31";//(date.getDate() > 0 && date.getDate() < 10) ? "0" + date.getDate() : date.getDate();
+                    month = "06",//(date.getMonth() >= 0 && date.getMonth() < 9) ? "0" + (date.getMonth() + 1) : (date.getMonth() + 1),
+                    day = "28";//(date.getDate() > 0 && date.getDate() < 10) ? "0" + date.getDate() : date.getDate();
                 var season = season[year + month + day],
                     luckyDay =  year + "年" + month + "月" + day + "日";
                 
