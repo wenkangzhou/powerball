@@ -123,7 +123,7 @@
                     email: "zhangzhuo",
                     name: "张卓",
                     code: "83",
-                    isJoin: true
+                    isJoin: false
                 },{
                     email: "yangye",
                     name: "小爷",
@@ -153,7 +153,7 @@
                     email: "wuhongjie",
                     name: "洪杰",
                     code: "66",
-                    isJoin: true
+                    isJoin: false
                 },{
                     email: "zhangxinxu",
                     name: "张老师",
@@ -203,12 +203,12 @@
                     email: "shenjiaxin",
                     name: "沈佳鑫",
                     code: "85",
-                    isJoin: false
+                    isJoin: true
                 },{
                     email: "gandaochuan",
                     name: "甘道川",
                     code: "11",
-                    isJoin: false
+                    isJoin: true
                 },{
                     email: "chihaiyue",
                     name: "池海跃",
@@ -218,7 +218,7 @@
                     email: "shanyerong",
                     name: "单业荣",
                     code: "66",
-                    isJoin: false
+                    isJoin: true
                     
                 },{
                     email: "sunmeiye",
@@ -240,7 +240,7 @@
                     email: "qiushanli",
                     name: "靛蓝",
                     code: "31",
-                    isJoin: true
+                    isJoin: false
                 },{
                     email: "xiepan",
                     name: "谢盼",
@@ -249,6 +249,16 @@
                 },{
                     email: "mikang",
                     name: "米康",
+                    code: "77",
+                    isJoin: true
+                },{
+                    email: "zengzhijie",
+                    name: "阿希",
+                    code: "77",
+                    isJoin: true
+                },{
+                    email: "wanglei",
+                    name: "王磊",
                     code: "77",
                     isJoin: true
                 }];
@@ -260,7 +270,8 @@
                     "20181228": "004",
                     "20190301": "005",
                     "20190322": "006",
-                    "20190628": "007"
+                    "20190628": "007",
+                    "20190809": "008",
                 }
                 // 上期数据
                 var lastCode = "55",
@@ -269,8 +280,8 @@
                 var fragment = [];
                 var date = new Date(),
                     year = "2019",//date.getFullYear(),
-                    month = "06",//(date.getMonth() >= 0 && date.getMonth() < 9) ? "0" + (date.getMonth() + 1) : (date.getMonth() + 1),
-                    day = "28";//(date.getDate() > 0 && date.getDate() < 10) ? "0" + date.getDate() : date.getDate();
+                    month = "08",//(date.getMonth() >= 0 && date.getMonth() < 9) ? "0" + (date.getMonth() + 1) : (date.getMonth() + 1),
+                    day = "09";//(date.getDate() > 0 && date.getDate() < 10) ? "0" + date.getDate() : date.getDate();
                 var season = season[year + month + day],
                     luckyDay =  year + "年" + month + "月" + day + "日";
                 
