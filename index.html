@@ -389,8 +389,14 @@
                         + "</p>"
                         + "</div>";
                     if(data[i].isJoin){
-                        //fragment.appendChild(itemDom);
-                        fragment.push(itemDom);
+                        if( getQueryString('code') ) {
+                            if(getQueryString('code').charAt(0) === data[i].code[0] || getQueryString('code').charAt(1) === data[i].code[1]){
+                                fragment.push(itemDom);
+                            }
+                        }else{
+                           //fragment.appendChild(itemDom);
+                            fragment.push(itemDom);
+                        }
                     }
                 }
                 //document.querySelector(".wrapper").appendChild(fragment);
